@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data & Tech Indonesia 2022 — Adinda Anas Qolbu</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <a href="../index.html" class="nav-logo">AAQ</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#projects" class="active">Projects</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="https://github.com/AdindaAnas" target="_blank" class="nav-github" aria-label="GitHub">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+    </a>
+  </nav>
+
+  <header class="project-hero">
+    <div class="project-hero-inner">
+      <a href="../index.html#projects" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        All Projects
+      </a>
+      <div class="project-hero-tags">
+        <span class="project-hero-tag">EDA</span>
+        <span class="project-hero-tag">Industry Survey</span>
+        <span class="project-hero-tag">Python</span>
+        <span class="project-hero-tag">Plotly</span>
+        <span class="project-hero-tag">Kaggle Survey 2022</span>
+      </div>
+      <h1 class="project-hero-title">Decoding the Data &amp; Tech<br/>Profession in Indonesia (2022)</h1>
+      <p class="project-hero-desc">
+        Analisis mendalam lanskap karier Data &amp; Tech di Indonesia berdasarkan
+        Kaggle ML &amp; Data Science Survey 2022 — memfilter 111 profesional aktif
+        dari 23,997 responden global untuk menjawab 4 kunci pertanyaan.
+      </p>
+      <div class="project-hero-actions">
+        <a href="https://github.com/AdindaAnas/data-tech-indonesia-2022" target="_blank" class="btn btn-primary">View on GitHub →</a>
+        <a href="../index.html#projects" class="btn btn-ghost">← Back</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container" style="padding: 0 3rem;">
+    <div class="stat-strip">
+      <div class="stat-item">
+        <div class="stat-value">23,997</div>
+        <div class="stat-label">Total Responden Global</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">111</div>
+        <div class="stat-label">Profesional Aktif Indonesia</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">296</div>
+        <div class="stat-label">Kolom Dataset</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">4</div>
+        <div class="stat-label">Business Questions</div>
+      </div>
+    </div>
+  </div>
+
+  <article class="project-body">
+
+    <h2>Overview</h2>
+    <p>
+      Proyek ini mengungkap panorama pekerjaan di bidang <strong>Data &amp; Teknologi di Indonesia</strong>
+      pada tahun 2022 menggunakan data dari <strong>Kaggle ML &amp; Data Science Survey 2022</strong>.
+      Dari 23,997 responden global, difilter <strong>111 profesional aktif yang berdomisili di Indonesia</strong>
+      — bukan pelajar, sedang aktif bekerja, dan menjawab data industri.
+    </p>
+
+    <p>Kriteria filter yang diterapkan:</p>
+    <ul>
+      <li>Bukan pelajar/mahasiswa (<code>Q5 == "No"</code>)</li>
+      <li>Menjawab industri tempat bekerja (<code>Q24 is not null</code>)</li>
+      <li>Sedang aktif bekerja (<code>Q23 != "Currently not employed"</code>)</li>
+      <li>Berdomisili di Indonesia (<code>Q4 == "Indonesia"</code>)</li>
+    </ul>
+
+    <h2>Q1 — Top Job Positions</h2>
+    <p>
+      <strong>Data Analyst</strong> merupakan posisi yang paling banyak diisi oleh profesional Data &amp; Tech di Indonesia, 
+      diikuti oleh <strong>Teacher/Professor</strong> dan <strong>Data Scientist</strong>.
+    </p>
+    <p>Aktivitas yang mendominasi pada peran teknis yang terlibat langsung dalam proses Data & Machine Learning meliputi:</p>
+    <ul>
+      <li>Analisis data untuk pengambilan keputusan bisnis</li>
+      <li>Pembangunan dan pengelolaan infrastruktur data</li>
+      <li>Eksperimen dan iterasi model machine learning</li>
+    </ul>
+
+    <h2>Q2 — Industri Perekrut Terbesar</h2>
+
+    <div style="overflow-x:auto; margin: 1.25rem 0;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.82rem; font-family:var(--font-mono);">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border);">
+            <th style="text-align:left; padding:0.5rem 1rem; color:var(--accent); font-weight:500;">Industri</th>
+            <th style="text-align:right; padding:0.5rem 1rem; color:var(--accent); font-weight:500;">Jumlah Responden</th>
+          </tr>
+        </thead>
+        <tbody style="color:var(--text-muted);">
+          <tr style="border-bottom:1px solid var(--border); background:rgba(110,143,255,0.05);">
+            <td style="padding:0.45rem 1rem; color:var(--accent);">🏆 Academics / Education</td>
+            <td style="text-align:right; padding:0.45rem 1rem; color:var(--accent); font-weight:500;">35</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.45rem 1rem;">Computers / Technology</td>
+            <td style="text-align:right; padding:0.45rem 1rem;">19</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.45rem 1rem;">Accounting / Finance</td>
+            <td style="text-align:right; padding:0.45rem 1rem;">11</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.45rem 1rem;">Manufacturing / Fabrication</td>
+            <td style="text-align:right; padding:0.45rem 1rem;">10</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.45rem 1rem;">Retail / Sales</td>
+            <td style="text-align:right; padding:0.45rem 1rem;">8</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.45rem 1rem;">Government / Public Service</td>
+            <td style="text-align:right; padding:0.45rem 1rem;">5</td>
+          </tr>
+          <tr>
+            <td style="padding:0.45rem 1rem;">Marketing / CRM</td>
+            <td style="text-align:right; padding:0.45rem 1rem;">5</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout green">
+      <p>Sektor <strong>Academics / Education (35 responden)</strong> menjadi penyerap terbesar talenta Data &amp; Tech di Indonesia — mengungguli sektor teknologi itu sendiri. Ini menandakan tingginya kebutuhan pengajaran dan riset di bidang ini, sekaligus bahwa banyak profesional data masih berkarier di dunia akademik.</p>
+    </div>
+
+    <h2>Q3 — Distribusi Gender</h2>
+    <p>
+      Terdapat <strong>kesenjangan gender yang signifikan</strong> dalam profesi Data &amp; Tech di Indonesia,
+      dengan dominasi responden laki-laki. Kondisi ini mencerminkan tren global yang juga terlihat di tingkat
+      lokal, dan menandakan perlunya upaya lebih besar dalam mendorong inklusivitas serta kesetaraan gender
+      di ekosistem Data &amp; Tech Indonesia.
+    </p>
+
+    <h2>Q4 — Latar Belakang Pendidikan</h2>
+    <p>
+      Sebagian besar profesional Data &amp; Tech di Indonesia menyelesaikan pendidikan hingga tingkat Bachelor (36.04%) dan Master (32.43%), menunjukkan kecenderungan kuat terhadap kualifikasi pendidikan tinggi pada industri ini.
+    </p>
+
+    <h2>Key Takeaways</h2>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-value green" style="font-size:1.3rem;">Data Analyst </div>
+        <div class="result-label">Posisi #1 di Indonesia</div>
+      </div>
+      <div class="result-card">
+        <div class="result-value green" style="font-size:1.3rem;">Education</div>
+        <div class="result-label">Industri perekrut terbesar (35)</div>
+      </div>
+      <div class="result-card">
+        <div class="result-value green">111</div>
+        <div class="result-label">Profesional aktif dianalisis</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p>Proyek ini menunjukkan bahwa ekosistem Data &amp; Tech Indonesia masih berkembang, dengan mayoritas talenta terserap di sektor pendidikan dan teknologi — peluang besar bagi industri lain seperti keuangan, manufaktur, dan pemerintahan untuk memperkuat kapabilitas data mereka.</p>
+    </div>
+
+    <h2>Tools &amp; Stack</h2>
+    <ul>
+      <li><strong>Python</strong> — Pandas, NumPy, Matplotlib</li>
+      <li><strong>Visualisasi Interaktif</strong> — Plotly (graph_objects, express, figure_factory)</li>
+      <li><strong>Data Source</strong> — <a href="https://www.kaggle.com/competitions/kaggle-survey-2022" target="_blank" style="color:var(--accent);">Kaggle ML &amp; Data Science Survey 2022</a></li>
+    </ul>
+
+    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; gap: 1rem;">
+      <a href="https://github.com/AdindaAnas/data-tech-indonesia-2022" target="_blank" class="btn btn-primary">View Full Code →</a>
+      <a href="../index.html#projects" class="btn btn-ghost">← All Projects</a>
+    </div>
+  </article>
+
+  <footer class="footer"><p>© 2025–present Adinda Anas Qolbu</p></footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

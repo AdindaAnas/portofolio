@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IndiHome Sentiment Analysis — Adinda Anas Qolbu</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <a href="../index.html" class="nav-logo">AAQ</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#projects" class="active">Projects</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="https://github.com/AdindaAnas" target="_blank" class="nav-github" aria-label="GitHub">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+    </a>
+  </nav>
+
+  <header class="project-hero">
+    <div class="project-hero-inner">
+      <a href="../index.html#projects" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        All Projects
+      </a>
+      <div class="project-hero-tags">
+        <span class="project-hero-tag">NLP</span>
+        <span class="project-hero-tag">Sentiment Analysis</span>
+        <span class="project-hero-tag">IndoBERT</span>
+        <span class="project-hero-tag">SVM</span>
+        <span class="project-hero-tag">SMOTE</span>
+        <span class="project-hero-tag">Published</span>
+      </div>
+      <h1 class="project-hero-title">IndiHome Sentiment<br/>Analysis</h1>
+      <p class="project-hero-desc">
+        Comparing Naïve Bayes, SVM, and IndoBERT on 7,393 Indonesian tweets about IndiHome.
+        IndoBERT achieved <strong>96% accuracy</strong> and F1-macro 0.95.
+        Published in Jurnal Fourier (2025).
+      </p>
+      <div class="project-hero-actions">
+        <a href="https://github.com/AdindaAnas/indihome_sentiment" target="_blank" class="btn btn-primary">View on GitHub →</a>
+        <a href="../index.html#projects" class="btn btn-ghost">← Back</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container" style="padding: 0 3rem;">
+    <div class="stat-strip">
+      <div class="stat-item">
+        <div class="stat-value">7,393</div>
+        <div class="stat-label">Tweets Analyzed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">96%</div>
+        <div class="stat-label">Best Accuracy (IndoBERT)</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">0.95</div>
+        <div class="stat-label">F1-Macro (IndoBERT)</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">2025</div>
+        <div class="stat-label">Jurnal Fourier</div>
+      </div>
+    </div>
+  </div>
+
+  <article class="project-body">
+
+    <h2>Overview</h2>
+    <p>
+      This research analyzes customer opinions about IndiHome — one of Indonesia's major ISPs —
+      using Twitter data, to understand real-time satisfaction and complaints. The study compares
+      three NLP approaches on imbalanced data and was published in
+      <strong>Jurnal Fourier (2025)</strong>.
+    </p>
+
+    <h2>Model Comparison Results</h2>
+    <p>All models were tested with and without imbalanced data handling strategies (SMOTE, class weighting):</p>
+
+    <div style="overflow-x:auto; margin: 1.25rem 0;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.82rem; font-family:var(--font-mono);">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border);">
+            <th style="text-align:left; padding:0.5rem 1rem; color:var(--accent); font-weight:500;">Model</th>
+            <th style="text-align:left; padding:0.5rem 1rem; color:var(--accent); font-weight:500;">Akurasi</th>
+          </tr>
+        </thead>
+        <tbody style="color:var(--text-muted);">
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.45rem 1rem;">Naïve Bayes</td><td style="padding:0.45rem 1rem;">89%</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.45rem 1rem;">Naïve Bayes + SMOTE</td><td style="padding:0.45rem 1rem;">92%</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.45rem 1rem;">SVM</td><td style="padding:0.45rem 1rem;">94%</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.45rem 1rem;">SVM Balanced (class weighting)</td><td style="padding:0.45rem 1rem;">95%</td></tr>
+          <tr style="background:rgba(110,143,255,0.06);"><td style="padding:0.45rem 1rem; color:var(--accent);">🏆 IndoBERT</td><td style="padding:0.45rem 1rem; color:var(--accent); font-weight:500;">96%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout green">
+      <p><strong>IndoBERT (96% accuracy, F1-macro 0.95)</strong> — transformer-based model secara signifikan lebih unggul dalam memahami konteks bahasa Indonesia dibanding model tradisional. IndoBERT relatif stabil bahkan tanpa teknik penyeimbangan tambahan.</p>
+    </div>
+
+    <h2>Key Findings</h2>
+    <ul>
+      <li>SMOTE meningkatkan akurasi Naïve Bayes dari <strong>89% → 92%</strong> (F1-macro dari 0.84 → 0.90)</li>
+      <li>SVM menjadi <em>middle ground</em> yang kuat dan stabil (94–95%)</li>
+      <li>Teknik balancing data lebih berdampak pada model tradisional; IndoBERT stabil tanpa penanganan tambahan</li>
+      <li>Model berbasis transformer jauh lebih memahami konteks dan nuansa bahasa Indonesia</li>
+    </ul>
+
+    <h2>Business Insights dari Data</h2>
+    <p><strong>Yang disukai pelanggan:</strong></p>
+    <ul>
+      <li>Koneksi internet cepat dan lancar</li>
+      <li>Respons layanan pelanggan yang baik</li>
+      <li>Promo dan paket menarik</li>
+    </ul>
+    <p><strong>Yang dikeluhkan pelanggan:</strong></p>
+    <ul>
+      <li>Internet lambat</li>
+      <li>Koneksi sering putus / error</li>
+      <li>Masalah tagihan</li>
+    </ul>
+
+    <div class="callout">
+      <p>Proyek ini menunjukkan bahwa data Twitter dapat digunakan sebagai pipeline monitoring opini pelanggan secara real-time untuk mengidentifikasi pain points dan meningkatkan kualitas layanan berbasis feedback nyata.</p>
+    </div>
+
+    <h2>Publication</h2>
+    <p>
+      <strong>Jurnal Fourier, 2025 (Article in Indonesian)</strong> — "Performance of Naïve Bayes, SVM, and IndoBERT
+      for Twitter Sentiment Analysis on IndiHome Using Imbalanced Data Handling Strategies"
+    </p>
+
+    <h2>Tools &amp; Stack</h2>
+    <ul>
+      <li><strong>Python</strong> — Pandas, NumPy, Scikit-learn, HuggingFace Transformers</li>
+      <li><strong>NLP</strong> — Sastrawi (Indonesian stemmer), SMOTE, TF-IDF</li>
+      <li><strong>Models</strong> — Naïve Bayes, SVM, IndoBERT (indobenchmark/indobert-base-p1)</li>
+      <li><strong>Visualization</strong> — Matplotlib, Seaborn, WordCloud</li>
+    </ul>
+
+    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; gap: 1rem;">
+      <a href="https://github.com/AdindaAnas/indihome_sentiment" target="_blank" class="btn btn-primary">View Full Code →</a>
+      <a href="../index.html#projects" class="btn btn-ghost">← All Projects</a>
+    </div>
+  </article>
+
+  <footer class="footer"><p>© 2025–present Adinda Anas Qolbu</p></footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

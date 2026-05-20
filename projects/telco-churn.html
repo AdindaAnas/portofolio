@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Telco Churn Analysis — Adinda Anas Qolbu</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <a href="../index.html" class="nav-logo">AAQ</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#projects" class="active">Projects</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="https://github.com/AdindaAnas" target="_blank" class="nav-github" aria-label="GitHub">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+    </a>
+  </nav>
+
+  <header class="project-hero">
+    <div class="project-hero-inner">
+      <a href="../index.html#projects" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        All Projects
+      </a>
+      <div class="project-hero-tags">
+        <span class="project-hero-tag">Machine Learning</span>
+        <span class="project-hero-tag">EDA</span>
+        <span class="project-hero-tag">Python</span>
+        <span class="project-hero-tag">PostgreSQL</span>
+        <span class="project-hero-tag">Power BI</span>
+        <span class="project-hero-tag">XGBoost</span>
+      </div>
+      <h1 class="project-hero-title">Telco Customer<br/>Churn Analysis</h1>
+      <p class="project-hero-desc">
+        End-to-end churn prediction for a telecom company — from EDA and customer segmentation
+        to a Random Forest model with ROC-AUC 0.844, risk scoring, and retention strategy
+        simulation with ROI up to 15.93×.
+      </p>
+      <div class="project-hero-actions">
+        <a href="https://github.com/AdindaAnas/telco_churn_project" target="_blank" class="btn btn-primary">View on GitHub →</a>
+        <a href="../index.html#projects" class="btn btn-ghost">← Back</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container" style="padding: 0 3rem;">
+    <div class="stat-strip">
+      <div class="stat-item">
+        <div class="stat-value">7,043</div>
+        <div class="stat-label">Customers · 21 Features</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">26.5%</div>
+        <div class="stat-label">Churn Rate</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">0.844</div>
+        <div class="stat-label">ROC-AUC (Random Forest)</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">15.93×</div>
+        <div class="stat-label">Best Retention ROI</div>
+      </div>
+    </div>
+  </div>
+
+  <article class="project-body">
+
+    <h2>Overview</h2>
+    <p>
+      Customer churn costs telecom companies not just lost revenue but also acquisition costs
+      for replacements. This project builds a full analytics pipeline on the
+      <strong>Telco Customer Churn Dataset (7,043 customers, 21 features)</strong> — from
+      database design to a Power BI dashboard — identifying who will churn, how much it costs,
+      and which retention strategy maximizes ROI.
+    </p>
+
+    <h2>EDA — Key Findings</h2>
+    <ul>
+      <li><strong>Churn rate: 26.5%</strong> of the customer base</li>
+      <li>Customers on <strong>month-to-month contracts</strong> have the highest churn rate — they dominate the customer base and represent the biggest at-risk segment</li>
+      <li>Customers with <strong>short tenure (0–5 months)</strong> are the most vulnerable, especially combined with month-to-month contracts — onboarding is a critical phase</li>
+      <li><strong>Higher monthly charges</strong> correlate with greater churn risk, particularly customers using electronic check</li>
+    </ul>
+
+    <h2>Database Design</h2>
+    <p>
+      Built a relational database in <strong>PostgreSQL</strong> to structure the dataset into
+      normalized tables: <code>customers</code>, <code>billing</code>, <code>services</code>,
+      <code>contract_types</code>, <code>payment_methods</code>, <code>internet_services</code>.
+    </p>
+
+    <h2>Customer Segmentation — Key Findings</h2>
+    <ul>
+      <li><strong>High Spenders</strong> have the highest churn rate and contribute the largest share of revenue at risk</li>
+      <li>Customers with <strong>fewer services</strong> are more likely to churn</li>
+      <li>While high-risk customers are individually most likely to churn, the <strong>medium-risk segment contributes the largest total expected loss</strong> due to its larger population</li>
+    </ul>
+
+    <h2>Machine Learning Models</h2>
+    <p>Three models were compared with class imbalance handled via baseline, class weighting, and SMOTE:</p>
+
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-value blue">0.844</div>
+        <div class="result-label">ROC-AUC · Random Forest</div>
+      </div>
+      <div class="result-card">
+        <div class="result-value blue">0.655</div>
+        <div class="result-label">PR-AUC · Random Forest</div>
+      </div>
+      <div class="result-card">
+        <div class="result-value blue">0.826</div>
+        <div class="result-label">Recall · Random Forest</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><strong>Best Model: Random Forest</strong> — outperformed Logistic Regression and XGBoost across ROC-AUC, PR-AUC, and Recall metrics.</p>
+    </div>
+
+    <h2>Business Impact — Churn Risk Scoring</h2>
+    <p>
+      The model output was used to calculate <strong>churn probability</strong>,
+      <strong>risk level</strong>, and <strong>expected financial loss</strong> per customer,
+      stored in a <code>churn_risk_score</code> table. Example output:
+    </p>
+    <div style="overflow-x:auto; margin: 1.25rem 0;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.82rem; font-family:var(--font-mono);">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border);">
+            <th style="text-align:left; padding:0.5rem 1rem; color:var(--accent); font-weight:500;">customer_id</th>
+            <th style="text-align:left; padding:0.5rem 1rem; color:var(--accent); font-weight:500;">churn_probability</th>
+            <th style="text-align:left; padding:0.5rem 1rem; color:var(--accent); font-weight:500;">risk_level</th>
+            <th style="text-align:left; padding:0.5rem 1rem; color:var(--accent); font-weight:500;">expected_loss</th>
+          </tr>
+        </thead>
+        <tbody style="color:var(--text-muted);">
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.45rem 1rem;">7590-VHVEG</td><td style="padding:0.45rem 1rem;">0.567</td><td style="padding:0.45rem 1rem;">Medium</td><td style="padding:0.45rem 1rem;">$203.23</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.45rem 1rem;">5575-GNVDE</td><td style="padding:0.45rem 1rem;">0.056</td><td style="padding:0.45rem 1rem;">Low</td><td style="padding:0.45rem 1rem;">$38.22</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.45rem 1rem;">3668-QPYBK</td><td style="padding:0.45rem 1rem;">0.511</td><td style="padding:0.45rem 1rem;">Medium</td><td style="padding:0.45rem 1rem;">$329.90</td></tr>
+          <tr><td style="padding:0.45rem 1rem;">9237-HQITU</td><td style="padding:0.45rem 1rem;">0.621</td><td style="padding:0.45rem 1rem;">High</td><td style="padding:0.45rem 1rem;">$526.94</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Retention Strategy Simulation</h2>
+    <p>Scenarios tested across discount rates (5%, 10%, 15%), durations (3 or 6 months), and retention success rates (10%, 20%, 30%).</p>
+
+    <div class="callout blue">
+      <p><strong>Best Strategy:</strong> Target High Risk + High Revenue customers · Discount 5% · Duration 3 months → <strong>ROI: 15.93×</strong></p>
+    </div>
+
+    <p>A small segment of <strong>high-risk, high-value customers</strong> contributes disproportionately to potential revenue loss — making them the most impactful and cost-efficient target for retention intervention.</p>
+
+    <h2>Power BI Dashboard</h2>
+    <p>An interactive Power BI dashboard was built around 5 business questions:</p>
+    <ol>
+      <li>Who are our customers and what is their overall value?</li>
+      <li>What factors are driving customer churn?</li>
+      <li>How do churned customers behave compared to retained ones?</li>
+      <li>Which customers are at risk and how much revenue could be lost?</li>
+      <li>Which retention strategy gives the highest return?</li>
+    </ol>
+
+    <h2>Tools &amp; Stack</h2>
+    <ul>
+      <li><strong>Python</strong> — Pandas, NumPy, Scikit-learn, XGBoost, Seaborn, Matplotlib</li>
+      <li><strong>Database</strong> — PostgreSQL, SQLAlchemy</li>
+      <li><strong>Dashboard</strong> — Power BI (.pbix)</li>
+      <li><strong>Notebooks</strong> — EDA · Customer Segmentation · Modelling · Business Recommendation</li>
+    </ul>
+
+    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; gap: 1rem;">
+      <a href="https://github.com/AdindaAnas/telco_churn_project" target="_blank" class="btn btn-primary">View Full Code →</a>
+      <a href="../index.html#projects" class="btn btn-ghost">← All Projects</a>
+    </div>
+  </article>
+
+  <footer class="footer"><p>© 2025–present Adinda Anas Qolbu</p></footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

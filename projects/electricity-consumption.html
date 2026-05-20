@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electricity Consumption in Indonesia — Adinda Anas Qolbu</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <a href="../index.html" class="nav-logo">AAQ</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#projects" class="active">Projects</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="https://github.com/AdindaAnas" target="_blank" class="nav-github" aria-label="GitHub">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+    </a>
+  </nav>
+
+  <header class="project-hero">
+    <div class="project-hero-inner">
+      <a href="../index.html#projects" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        All Projects
+      </a>
+      <div class="project-hero-tags">
+        <span class="project-hero-tag">Time Series</span>
+        <span class="project-hero-tag">K-Means Clustering</span>
+        <span class="project-hero-tag">ARIMA</span>
+        <span class="project-hero-tag">Python</span>
+        <span class="project-hero-tag">SQL</span>
+        <span class="project-hero-tag">BPS Data</span>
+      </div>
+      <h1 class="project-hero-title">Electricity Consumption<br/>in Indonesia</h1>
+      <p class="project-hero-desc">
+        3-notebook analysis of Indonesia's electricity consumption (2011–2024) covering
+        regional clustering, socioeconomic drivers, and ARIMA forecasting to 2030.
+        Forecast error: ~3% of actual values.
+      </p>
+      <div class="project-hero-actions">
+        <a href="https://github.com/AdindaAnas/electricity_consumption" target="_blank" class="btn btn-primary">View on GitHub →</a>
+        <a href="../index.html#projects" class="btn btn-ghost">← Back</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container" style="padding: 0 3rem;">
+    <div class="stat-strip">
+      <div class="stat-item">
+        <div class="stat-value">34</div>
+        <div class="stat-label">Provinces · 2011–2024</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">~17%</div>
+        <div class="stat-label">Highest CAGR (Maluku Utara)</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">~7,700</div>
+        <div class="stat-label">MAE (GWh) · ARIMA</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">~368K</div>
+        <div class="stat-label">GWh Projected 2030</div>
+      </div>
+    </div>
+  </div>
+
+  <article class="project-body">
+
+    <h2>Overview</h2>
+    <p>
+      A 3-notebook project analyzing Indonesia's electricity consumption using official BPS data.
+      Covering 34 provinces from 2011–2024, the project integrates provincial consumption trends,
+      socioeconomic drivers, and ARIMA forecasting for national demand through 2030.
+    </p>
+
+    <h2>Notebook 01 — Consumption Insights (2011–2024)</h2>
+    <p><strong>Dataset:</strong> 34 provinsi + agregasi nasional · Cakupan 2011–2024 (data 2016 tidak tersedia)</p>
+
+    <p><strong>Key Findings:</strong></p>
+    <ul>
+      <li><strong>Pulau Jawa mendominasi</strong> — Jawa Barat menjadi provinsi dengan konsumsi tertinggi</li>
+      <li>Konsumsi listrik nasional <strong>tren meningkat konsisten</strong>, dengan sedikit penurunan di 2020</li>
+      <li>Pasca 2020, pertumbuhan <strong>kembali stabil di kisaran 5–7% per tahun</strong></li>
+      <li><strong>Maluku Utara</strong> memiliki CAGR tertinggi (~17%), diikuti provinsi-provinsi Sulawesi</li>
+    </ul>
+
+    <p><strong>K-Means Clustering — 3 Segmen Provinsi:</strong></p>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-value green" style="font-size:1.1rem;">High Growth</div>
+        <div class="result-label">CAGR ~10.97% · konsumsi menengah · didominasi luar Jawa</div>
+      </div>
+      <div class="result-card">
+        <div class="result-value amber" style="font-size:1.1rem;">Moderate Growth</div>
+        <div class="result-label">CAGR ~7.04% · pertumbuhan stabil · konsumsi menengah</div>
+      </div>
+      <div class="result-card">
+        <div class="result-value blue" style="font-size:1.1rem;">Mature High-Demand</div>
+        <div class="result-label">CAGR ~4.42% · konsumsi tertinggi · didominasi Jawa</div>
+      </div>
+    </div>
+
+    <h2>Notebook 02 — Socioeconomic Drivers (2017–2024)</h2>
+    <p><strong>Dataset:</strong> 272 observasi provinsi–tahun · integrasi data listrik, populasi, PDRB, kemiskinan</p>
+
+    <p><strong>Correlation Analysis:</strong></p>
+    <ul>
+      <li>Konsumsi listrik berkorelasi <strong>sangat kuat</strong> dengan populasi <strong>(r = 0.90)</strong> dan PDRB <strong>(r = 0.91)</strong></li>
+      <li>Konsumsi per kapita berkorelasi positif dengan PDRB per kapita <strong>(r = 0.68)</strong></li>
+      <li>Tingkat kemiskinan berkorelasi <strong>negatif</strong> dengan konsumsi per kapita <strong>(r = −0.49)</strong></li>
+    </ul>
+
+    <h2>Notebook 03 — ARIMA Forecasting (2025–2030)</h2>
+    <p>
+      ADF Test menunjukkan data tidak stasioner (p-value = 0.994) → digunakan <code>d=1</code>.
+      Walk-Forward Validation dilakukan sebelum fitting <strong>ARIMA(1,1,1)</strong> pada keseluruhan data.
+      Missing data 2016 ditangani dengan linear interpolation.
+    </p>
+
+    <div class="callout amber">
+      <p><strong>Model Performance:</strong> MAE ~7,700 GWh · RMSE ~7,800 GWh · Error relatif ~3% dari nilai aktual</p>
+    </div>
+
+    <p><strong>Hasil Forecasting Konsumsi Listrik Nasional:</strong></p>
+    <div style="overflow-x:auto; margin: 1.25rem 0;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.82rem; font-family:var(--font-mono);">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border);">
+            <th style="text-align:left; padding:0.5rem 1rem; color:var(--accent); font-weight:500;">Tahun</th>
+            <th style="text-align:left; padding:0.5rem 1rem; color:var(--accent); font-weight:500;">Proyeksi Konsumsi</th>
+          </tr>
+        </thead>
+        <tbody style="color:var(--text-muted);">
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.45rem 1rem;">2025</td><td style="padding:0.45rem 1rem;">~316,000 GWh</td></tr>
+          <tr><td style="padding:0.45rem 1rem;">2030</td><td style="padding:0.45rem 1rem;">~368,000 GWh</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Tools &amp; Stack</h2>
+    <ul>
+      <li><strong>Python</strong> — Pandas, NumPy, Matplotlib, Seaborn, Statsmodels, Scikit-learn</li>
+      <li><strong>SQL</strong> — PostgreSQL untuk data cleaning dan transformasi</li>
+      <li><strong>Data Source</strong> — Badan Pusat Statistik (BPS) Indonesia</li>
+    </ul>
+
+    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; gap: 1rem;">
+      <a href="https://github.com/AdindaAnas/electricity_consumption" target="_blank" class="btn btn-primary">View Full Code →</a>
+      <a href="../index.html#projects" class="btn btn-ghost">← All Projects</a>
+    </div>
+  </article>
+
+  <footer class="footer"><p>© 2025–present Adinda Anas Qolbu</p></footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

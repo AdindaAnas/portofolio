@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GA4 Funnel Analysis — Adinda Anas Qolbu</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <a href="../index.html" class="nav-logo">AAQ</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#projects" class="active">Projects</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="https://github.com/AdindaAnas" target="_blank" class="nav-github" aria-label="GitHub">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+    </a>
+  </nav>
+
+  <header class="project-hero">
+    <div class="project-hero-inner">
+      <a href="../index.html#projects" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        All Projects
+      </a>
+      <div class="project-hero-tags">
+        <span class="project-hero-tag">Product Analytics</span>
+        <span class="project-hero-tag">GA4</span>
+        <span class="project-hero-tag">SQL</span>
+        <span class="project-hero-tag">Python</span>
+        <span class="project-hero-tag">Conversion Funnel</span>
+      </div>
+      <h1 class="project-hero-title">GA4 User Daily<br/>Funnel Analysis</h1>
+      <p class="project-hero-desc">
+        Analisis perilaku pengguna dalam alur pembelian menggunakan 115,711 baris data GA4 —
+        mengidentifikasi drop-off terbesar by volume di tahap Page View → Product View (82,425 pengguna),
+        drop-off rate tertinggi di Product View → Cart (83.4%),
+        dan membandingkan konversi antar device dan traffic source.
+      </p>
+      <div class="project-hero-actions">
+        <a href="https://github.com/AdindaAnas/funnel_analysis" target="_blank" class="btn btn-primary">View on GitHub →</a>
+        <a href="../index.html#projects" class="btn btn-ghost">← Back</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container" style="padding: 0 3rem;">
+    <div class="stat-strip">
+      <div class="stat-item">
+        <div class="stat-value">115,711</div>
+        <div class="stat-label">Raw Rows (GA4)</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">102,951</div>
+        <div class="stat-label">Rows After Cleaning</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">0.38%</div>
+        <div class="stat-label">Overall Conversion Rate</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">82,425</div>
+        <div class="stat-label">Users Lost at Biggest Drop-off</div>
+      </div>
+    </div>
+  </div>
+
+  <article class="project-body">
+
+    <h2>Overview</h2>
+    <p>
+      Proyek ini menganalisis perilaku pengguna dalam <em>conversion funnel</em> pembelian
+      menggunakan data harian dari <strong>Google Analytics 4 (GA4)</strong>. Dataset mencakup
+      jejak aktivitas dari page view hingga transaksi, disegmentasi berdasarkan device type
+      dan traffic source.
+    </p>
+    <p>
+      Dari 115,711 baris mentah, setelah cleaning (agregasi duplikat user-date sebanyak 9,146,
+      penghapusan pengguna tidak aktif) diperoleh <strong>102,951 baris</strong>
+      untuk analisis utama.
+    </p>
+
+    <h2>Overall Conversion Funnel</h2>
+    <p>5 tahap funnel: Page View → Product View → Cart → Checkout → Purchase</p>
+
+    <div style="overflow-x:auto; margin: 1.25rem 0;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.82rem; font-family:var(--font-mono);">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border);">
+            <th style="text-align:left; padding:0.5rem 1rem; color:var(--accent); font-weight:500;">Tahap</th>
+            <th style="text-align:right; padding:0.5rem 1rem; color:var(--accent); font-weight:500;">Pengguna</th>
+            <th style="text-align:right; padding:0.5rem 1rem; color:var(--accent); font-weight:500;">Conversion Rate</th>
+            <th style="text-align:right; padding:0.5rem 1rem; color:var(--accent); font-weight:500;">Drop-off Rate</th>
+          </tr>
+        </thead>
+        <tbody style="color:var(--text-muted);">
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.45rem 1rem;">Page View</td>
+            <td style="text-align:right; padding:0.45rem 1rem;">102,926</td>
+            <td style="text-align:right; padding:0.45rem 1rem;">100% (baseline)</td>
+            <td style="text-align:right; padding:0.45rem 1rem;">—</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border); background:rgba(240,80,80,0.05);">
+            <td style="padding:0.45rem 1rem;">Product View</td>
+            <td style="text-align:right; padding:0.45rem 1rem;">20,501</td>
+            <td style="text-align:right; padding:0.45rem 1rem; color:#f06060;"><strong>19.9%</strong></td>
+            <td style="text-align:right; padding:0.45rem 1rem; color:#f06060;"><strong>80.1% ← terbesar by volume</strong></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border); background:rgba(240,80,80,0.08);">
+            <td style="padding:0.45rem 1rem;">Cart</td>
+            <td style="text-align:right; padding:0.45rem 1rem;">3,397</td>
+            <td style="text-align:right; padding:0.45rem 1rem;">16.6%</td>
+            <td style="text-align:right; padding:0.45rem 1rem; color:#f06060;"><strong>83.4% ← drop-off rate tertinggi</strong></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.45rem 1rem;">Checkout</td>
+            <td style="text-align:right; padding:0.45rem 1rem;">604</td>
+            <td style="text-align:right; padding:0.45rem 1rem;">17.8%</td>
+            <td style="text-align:right; padding:0.45rem 1rem;">82.2%</td>
+          </tr>
+          <tr>
+            <td style="padding:0.45rem 1rem;">Purchase</td>
+            <td style="text-align:right; padding:0.45rem 1rem;">393</td>
+            <td style="text-align:right; padding:0.45rem 1rem;">65.1%</td>
+            <td style="text-align:right; padding:0.45rem 1rem;">34.9%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout blue">
+      <p><strong>Overall Conversion Rate (Page View → Purchase): 0.38%</strong></p>
+      <p>🔴 <strong>Biggest drop-off by volume:</strong> Tahap <strong>Page View → Product View</strong> — lebih dari 82,425 pengguna keluar sebelum melihat satu produk pun. Ini adalah peluang optimasi terbesar untuk product discovery dan landing page.</p>
+      <p>🔴 <strong>Highest drop-off rate:</strong> Tahap <strong>Product View → Cart</strong> mencatat drop-off rate <strong>83.4%</strong> — hanya ~1 dari 6 pengguna yang sudah melihat produk yang akhirnya menambahkannya ke keranjang.</p>
+    </div>
+
+    <h2>Drop-off — Jumlah Pengguna Hilang per Tahap</h2>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-value blue">82,425</div>
+        <div class="result-label">Page View → Product View</div>
+      </div>
+      <div class="result-card">
+        <div class="result-value blue">17,104</div>
+        <div class="result-label">Product View → Cart</div>
+      </div>
+      <div class="result-card">
+        <div class="result-value blue">2,793</div>
+        <div class="result-label">Cart → Checkout</div>
+      </div>
+      <div class="result-card">
+        <div class="result-value blue">211</div>
+        <div class="result-label">Checkout → Purchase</div>
+      </div>
+    </div>
+
+    <h2>Segmentasi: Traffic Source</h2>
+
+    <div style="overflow-x:auto; margin: 1.25rem 0;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.82rem; font-family:var(--font-mono);">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border);">
+            <th style="text-align:left; padding:0.5rem 1rem; color:var(--accent); font-weight:500;">Traffic Source</th>
+            <th style="text-align:right; padding:0.5rem 1rem; color:var(--accent); font-weight:500;">Page Views</th>
+            <th style="text-align:right; padding:0.5rem 1rem; color:var(--accent); font-weight:500;">Purchases</th>
+            <th style="text-align:right; padding:0.5rem 1rem; color:var(--accent); font-weight:500;">Conversion Rate</th>
+          </tr>
+        </thead>
+        <tbody style="color:var(--text-muted);">
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.45rem 1rem;">(data deleted)</td><td style="text-align:right; padding:0.45rem 1rem;">4,644</td><td style="text-align:right; padding:0.45rem 1rem;">148</td><td style="text-align:right; padding:0.45rem 1rem;">3.19%</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.45rem 1rem;">shop.googlemerchandisestore.com</td><td style="text-align:right; padding:0.45rem 1rem;">7,731</td><td style="text-align:right; padding:0.45rem 1rem;">130</td><td style="text-align:right; padding:0.45rem 1rem; color:var(--green);"><strong>1.68%</strong></td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.45rem 1rem;">(direct)</td><td style="text-align:right; padding:0.45rem 1rem;">25,685</td><td style="text-align:right; padding:0.45rem 1rem;">256</td><td style="text-align:right; padding:0.45rem 1rem;">1.00%</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.45rem 1rem;">&lt;Other&gt;</td><td style="text-align:right; padding:0.45rem 1rem;">31,012</td><td style="text-align:right; padding:0.45rem 1rem;">253</td><td style="text-align:right; padding:0.45rem 1rem;">0.82%</td></tr>
+          <tr><td style="padding:0.45rem 1rem;">google</td><td style="text-align:right; padding:0.45rem 1rem;">40,626</td><td style="text-align:right; padding:0.45rem 1rem;">329</td><td style="text-align:right; padding:0.45rem 1rem;">0.81%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <p><strong>shop.googlemerchandisestore.com</strong> mencatat conversion rate <strong>1.68%</strong> — hampir 2x lipat dibanding Google organic (0.81%). <code>(data deleted)</code> diabaikan karena tidak representatif dan tidak actionable.</p>
+    </div>
+
+    <h2>Segmentasi: Device Type</h2>
+
+    <div style="overflow-x:auto; margin: 1.25rem 0;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.82rem; font-family:var(--font-mono);">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border);">
+            <th style="text-align:left; padding:0.5rem 1rem; color:var(--accent); font-weight:500;">Device</th>
+            <th style="text-align:right; padding:0.5rem 1rem; color:var(--accent); font-weight:500;">Page Views</th>
+            <th style="text-align:right; padding:0.5rem 1rem; color:var(--accent); font-weight:500;">Purchases</th>
+            <th style="text-align:right; padding:0.5rem 1rem; color:var(--accent); font-weight:500;">Conversion Rate</th>
+          </tr>
+        </thead>
+        <tbody style="color:var(--text-muted);">
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.45rem 1rem;">Tablet</td><td style="text-align:right; padding:0.45rem 1rem;">2,441</td><td style="text-align:right; padding:0.45rem 1rem;">29</td><td style="text-align:right; padding:0.45rem 1rem; color:var(--green);"><strong>1.19%</strong></td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.45rem 1rem;">Mobile</td><td style="text-align:right; padding:0.45rem 1rem;">43,632</td><td style="text-align:right; padding:0.45rem 1rem;">469</td><td style="text-align:right; padding:0.45rem 1rem;">1.07%</td></tr>
+          <tr><td style="padding:0.45rem 1rem;">Desktop</td><td style="text-align:right; padding:0.45rem 1rem;">63,625</td><td style="text-align:right; padding:0.45rem 1rem;">618</td><td style="text-align:right; padding:0.45rem 1rem;">0.97%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <p><strong>Tablet</strong> memiliki conversion rate tertinggi (1.19%), diikuti mobile (1.07%), lalu desktop (0.97%). Namun dari sisi volume absolut, <strong>desktop menghasilkan pembelian terbanyak (618 purchases)</strong>.</p>
+    </div>
+
+    <h2>Tools &amp; Stack</h2>
+    <ul>
+      <li><strong>Python</strong> — Pandas, NumPy, Matplotlib, Seaborn</li>
+      <li><strong>SQL</strong> — funnel extraction queries</li>
+      <li><strong>Data Source</strong> — Google Analytics 4 (GA4) daily export</li>
+    </ul>
+
+    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; gap: 1rem;">
+      <a href="https://github.com/AdindaAnas/funnel_analysis" target="_blank" class="btn btn-primary">View Full Code →</a>
+      <a href="../index.html#projects" class="btn btn-ghost">← All Projects</a>
+    </div>
+  </article>
+
+  <footer class="footer"><p>© 2025–present Adinda Anas Qolbu</p></footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
